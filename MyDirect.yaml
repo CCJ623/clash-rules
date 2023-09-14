@@ -1,6 +1,7 @@
 payload:
   - PROCESS-NAME,csgo.exe
   - PROCESS-NAME,steam.exe
+  - PROCESS=NAME,UsbEAm Hosts Editor v3.63.exe
   #DNS
   - IP-CIDR,119.29.29.29/32
   - IP-CIDR,120.53.53.53/32
