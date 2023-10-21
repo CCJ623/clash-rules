@@ -1,4 +1,9 @@
 payload:
+  # steam check
+  - DOMAIN,ipv6check-http.steamserver.net
+  - DOMAIN-SUFFIX,steamserver.net
+
+  
   # steam CDN
   - DOMAIN-SUFFIX,steamcontent.com
   - DOMAIN-SUFFIX,steamchina.com
@@ -19,6 +24,7 @@ payload:
   - DOMAIN,steamstore-a.akamaihd.net
   - DOMAIN,steamusercontent-a.akamaihd.net
   - DOMAIN,steamuserimages-a.akamaihd.net
+  
   #DNS
   - IP-CIDR,119.29.29.29/32
   - IP-CIDR,120.53.53.53/32
