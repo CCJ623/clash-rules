@@ -1,7 +1,10 @@
 payload:
   # steam check
   - DOMAIN,ipv6check-http.steamserver.net
+  - DOMAIN,api.steampowered.com
   - DOMAIN-SUFFIX,steamserver.net
+  - DOMAIN-SUFFIX,cm.steampowered.com
+  
 
   
   # steam CDN
