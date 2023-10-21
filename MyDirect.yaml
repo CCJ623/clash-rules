@@ -24,6 +24,9 @@ payload:
   - DOMAIN,steamstore-a.akamaihd.net
   - DOMAIN,steamusercontent-a.akamaihd.net
   - DOMAIN,steamuserimages-a.akamaihd.net
+  - DOMAIN,xz.pphimalayanrt.com
+  - DOMAIN,lv.queniujq.cn
+  - DOMAIN,alibaba.cdn.steampipe.steamcontent.com
   
   #DNS
   - IP-CIDR,119.29.29.29/32
