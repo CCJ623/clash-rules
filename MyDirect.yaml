@@ -3,7 +3,9 @@ payload:
   - DOMAIN,ipv6check-http.steamserver.net
   - DOMAIN-SUFFIX,steamserver.net
   - DOMAIN-SUFFIX,cm.steampowered.com
-  
+
+  # ipv6 check
+  - DOMAIN,ipv6.msftconnecttest.com
 
   
   # steam CDN
