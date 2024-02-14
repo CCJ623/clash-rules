@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "ip_cidr": ["119.29.29.29/32", "120.53.53.53/32", "1.12.12.12/32", "223.5.5.5/32", "223.6.6.6/32"],
+      "domain": ["dns.alidns.com", "doh.pub"]
+    },
+	{
+	  "domain": "ipv6check-http.steamserver.net",
+	  "domain_suffix": ["steamserver.net", "cm.steampowered.com"]
+	},
+	{
+	  "domain": "ipv6.msftconnecttest.com"
+	},
+	{
+	  "domain_suffix": ["steamcontent.com", "steamchina.com"],
+	  "domain": ["csgo.wmsj.cn", "dota2.wmsj.cn", "wmsjsteam.com", "dl.steam.clngaa.com", "dl.steam.ksyna.com", "st.dl.bscstorage.net", "st.dl.eccdnx.com", "st.dl.pinyuncloud.com", "xz.pphimalayanrt.com", "alibaba.cdn.steampipe.steamcontent.com"]
+	}
+  ]
+}
