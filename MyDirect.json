@@ -6,8 +6,7 @@
       "domain": ["dns.alidns.com", "doh.pub"]
     },
 	{
-	  "domain": "ipv6check-http.steamserver.net",
-	  "domain_suffix": ["steamserver.net", "cm.steampowered.com"]
+	  "domain": "ipv6check-http.steamserver.net"
 	},
 	{
 	  "domain": "ipv6.msftconnecttest.com"
