@@ -7,6 +7,9 @@
     {
 	  "domain_suffix": ["steamcontent.com", "steamchina.com", "steamserver.net", "cm.steampowered.com"],
 	  "domain": ["csgo.wmsj.cn", "dota2.wmsj.cn", "wmsjsteam.com", "dl.steam.clngaa.com", "dl.steam.ksyna.com", "st.dl.bscstorage.net", "st.dl.eccdnx.com", "st.dl.pinyuncloud.com", "xz.pphimalayanrt.com", "alibaba.cdn.steampipe.steamcontent.com", "media.st.dl.eccdnx.com", "api.steampowered.com"]
+    },
+    {
+	"domain_suffix": ["wmpvp.com"]	  
     }
   ]
 }
