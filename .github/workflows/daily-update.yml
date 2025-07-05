@@ -71,6 +71,8 @@ jobs:
       # 这一步是关键，它将你的 Python 脚本生成的 JSON 文件提交回仓库
       - name: 提交并推送更改
         run: |
+          # 在提交前先拉取最新更改，解决“fetch first”错误
+          git pull origin main
           git add tracker.json # 更新为根目录的 tracker.json
           # --quiet 参数表示如果文件没有变化，则不报错退出
           # --exit-code 参数表示如果文件有变化，则返回 0，否则返回 1
