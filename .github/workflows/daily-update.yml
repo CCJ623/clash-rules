@@ -1,0 +1,74 @@
+# 工作流的名称，显示在 GitHub Actions 页面
+name: 每日数据更新 (Python)
+
+# 定义工作流的触发器
+on:
+  # 每天定时运行，例如在 UTC 时间凌晨 0 点 30 分
+  # 你可以根据需要调整 cron 表达式
+  # cron 表达式格式: 分 时 日 月 周
+  # 示例: '30 0 * * *' 表示每天 UTC 00:30
+  schedule:
+    - cron: '30 0 * * *' # 每天 UTC 00:30 运行
+
+  # 允许手动从 GitHub Actions 页面触发此工作流
+  workflow_dispatch:
+
+# 定义一个或多个作业
+jobs:
+  # 唯一的作业 ID
+  update-data:
+    # 指定作业运行的环境，这里使用最新的 Ubuntu Linux
+    runs-on: ubuntu-latest
+
+    # 定义作业中的步骤
+    steps:
+      # 步骤 1: 检出仓库代码
+      # uses: actions/checkout@v4 是一个官方 Action，用于将你的仓库代码克隆到 Runner 上
+      - name: 检出仓库
+        uses: actions/checkout@v4
+        with:
+          # 允许 Action 访问仓库，以便后续的 Git 操作（如 push）
+          token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 提供的内置 token
+
+      # 步骤 2: 设置 Python 环境
+      # 使用 actions/setup-python@v5 Action 来安装指定版本的 Python
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x' # 使用最新的 Python 3 版本
+
+      # 步骤 3: 安装 Python 依赖
+      # 我们的脚本使用了 requests 库，所以需要安装它
+      - name: 安装 Python 依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      # 步骤 4: 运行 Python 脚本
+      # 假设你的 Python 脚本位于 scripts/data_processor.py
+      # 并且它会将处理后的 JSON 文件保存到 tracker.json (根目录)
+      - name: 运行 Python 数据处理器
+        run: |
+          python scripts/data_processor.py
+
+      # 步骤 5: 配置 Git 用户信息
+      # 这些信息将用于自动化提交的 Git commit
+      - name: 配置 Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # 步骤 6: 提交并推送更改
+      # 这一步是关键，它将你的 Python 脚本生成的 JSON 文件提交回仓库
+      - name: 提交并推送更改
+        run: |
+          git add tracker.json # 更新为根目录的 tracker.json
+          # --quiet 参数表示如果文件没有变化，则不报错退出
+          # --exit-code 参数表示如果文件有变化，则返回 0，否则返回 1
+          # || git commit ... 只有在前一个命令失败（即文件有变化）时才执行 commit
+          git diff --quiet --exit-code tracker.json || git commit -m "Python脚本自动数据更新"
+          git push
+        env:
+          # 使用 GitHub 提供的内置 token 进行身份验证
+          # 这个 token 具有对当前仓库的写入权限
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
