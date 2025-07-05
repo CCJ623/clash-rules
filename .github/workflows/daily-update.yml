@@ -58,13 +58,21 @@ jobs:
         run: |
           python scripts/data_processor.py
 
-      # 步骤 6: 配置 Git 用户信息
+      # 步骤 6: 打印 tracker.json 内容
+      # 这一步将 tracker.json 的内容输出到工作流日志中，方便调试和查看
+      - name: 打印 tracker.json 内容
+        run: |
+          echo "--- tracker.json 内容 ---"
+          cat tracker.json
+          echo "-------------------------"
+
+      # 步骤 7: 配置 Git 用户信息
       - name: 配置 Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 步骤 7: 提交并推送更改 (更健壮的逻辑)
+      # 步骤 8: 提交并推送更改 (更健壮的逻辑)
       - name: 提交并推送更改
         run: |
           # 1. 将 tracker.json 添加到暂存区
