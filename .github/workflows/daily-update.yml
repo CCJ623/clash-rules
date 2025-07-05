@@ -17,6 +17,13 @@ on:
 jobs:
   # 唯一的作业 ID
   update-data:
+    # **新增权限配置**
+    # 显式授予对 `contents` 的写入权限，这是 Git 推送所必需的。
+    permissions:
+      contents: write # 授予对仓库内容的写入权限
+      # issues: write # 如果你需要创建或更新 issue，可以添加
+      # pull-requests: write # 如果你需要创建或更新 PR，可以添加
+
     # 指定作业运行的环境，这里使用最新的 Ubuntu Linux
     runs-on: ubuntu-latest
 
@@ -28,6 +35,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           # 允许 Action 访问仓库，以便后续的 Git 操作（如 push）
+          # 这里可以省略 token: ${{ secrets.GITHUB_TOKEN }}，因为 permissions 已经处理了
+          # 但保留它也无害
           token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 提供的内置 token
 
       # 步骤 2: 设置 Python 环境
