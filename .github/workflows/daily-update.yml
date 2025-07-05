@@ -39,7 +39,7 @@ jobs:
         run: |
           git pull origin main
 
-      # **新增调试步骤：打印初始 tracker.json 内容**
+      # 新增调试步骤：打印初始 tracker.json 内容
       # 这一步将在 Python 脚本运行前，显示仓库中当前 tracker.json 的内容
       - name: 打印初始 tracker.json 内容
         run: |
@@ -90,21 +90,19 @@ jobs:
           # 1. 将 tracker.json 添加到暂存区
           git add tracker.json
           
-          # 2. 检查 tracker.json 是否有实际变化。
-          # 如果没有变化，git diff --quiet --exit-code 会返回 0，条件判断为真，跳过 commit 和 push。
-          # 如果有变化，git diff --quiet --exit-code 会返回非 0，条件判断为假，执行 commit 和 push。
-          if git diff --quiet --exit-code tracker.json; then
+          # 2. 检查暂存区中的 tracker.json 是否与上次提交有实际变化。
+          # 使用 --cached 参数来比较暂存区与 HEAD。
+          if git diff --cached --quiet --exit-code tracker.json; then
             echo "tracker.json 没有变化，跳过提交和推送。"
-            # **新增调试：如果 Git 认为没有变化，打印详细 diff**
-            echo "--- 详细 Git Diff 输出 (如果 Git 认为没有变化) ---"
-            git diff tracker.json # 打印详细差异，不带 --quiet --exit-code
-            echo "--------------------------------------------------"
+            # 调试：如果 Git 认为没有变化，打印详细的暂存区与 HEAD 的 diff
+            echo "--- 详细 Git Diff (暂存区 vs HEAD) 输出 (如果 Git 认为没有变化) ---"
+            git diff --cached tracker.json # 打印详细差异，不带 --quiet --exit-code
+            echo "-------------------------------------------------------------------"
           else
             echo "tracker.json 已变化，准备提交..."
             git commit -m "Python脚本自动数据更新"
             
             # 3. 尝试直接推送
-            # 即使在 pull 之后，也可能存在极小概率的并发推送，所以保留 rebase 逻辑以增加健壮性
             if ! git push; then
               echo "首次推送失败，尝试拉取最新更改并 rebase..."
               # 获取远程最新更改，但不合并到本地分支
