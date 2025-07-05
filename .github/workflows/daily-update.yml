@@ -39,6 +39,18 @@ jobs:
         run: |
           git pull origin main
 
+      # **新增调试步骤：打印初始 tracker.json 内容**
+      # 这一步将在 Python 脚本运行前，显示仓库中当前 tracker.json 的内容
+      - name: 打印初始 tracker.json 内容
+        run: |
+          echo "--- 仓库中当前的 tracker.json 内容 ---"
+          if [ -f tracker.json ]; then
+            cat tracker.json
+          else
+            echo "tracker.json 文件不存在于仓库中。"
+          fi
+          echo "-------------------------------------"
+
       # 步骤 3: 设置 Python 环境
       - name: 设置 Python 环境
         uses: actions/setup-python@v5
@@ -58,13 +70,13 @@ jobs:
         run: |
           python scripts/data_processor.py
 
-      # 步骤 6: 打印 tracker.json 内容
+      # 步骤 6: 打印 tracker.json 内容 (脚本生成后的内容)
       # 这一步将 tracker.json 的内容输出到工作流日志中，方便调试和查看
-      - name: 打印 tracker.json 内容
+      - name: 打印脚本生成后的 tracker.json 内容
         run: |
-          echo "--- tracker.json 内容 ---"
+          echo "--- 脚本生成后的 tracker.json 内容 ---"
           cat tracker.json
-          echo "-------------------------"
+          echo "-------------------------------------"
 
       # 步骤 7: 配置 Git 用户信息
       - name: 配置 Git
@@ -83,6 +95,10 @@ jobs:
           # 如果有变化，git diff --quiet --exit-code 会返回非 0，条件判断为假，执行 commit 和 push。
           if git diff --quiet --exit-code tracker.json; then
             echo "tracker.json 没有变化，跳过提交和推送。"
+            # **新增调试：如果 Git 认为没有变化，打印详细 diff**
+            echo "--- 详细 Git Diff 输出 (如果 Git 认为没有变化) ---"
+            git diff tracker.json # 打印详细差异，不带 --quiet --exit-code
+            echo "--------------------------------------------------"
           else
             echo "tracker.json 已变化，准备提交..."
             git commit -m "Python脚本自动数据更新"
