@@ -3,7 +3,13 @@
   "rules": [
     {
       "domain_suffix": [
-        "steamserver.net"
+        "steamserver.net",
+        "steamcontent.com",
+        "steamstatic.com",
+        "steamserver.net",
+        "test.steampowered.com",
+        "api.steampowered.com",
+        "rmbgame.net"
       ]
     }
   ]
