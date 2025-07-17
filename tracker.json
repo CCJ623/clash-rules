@@ -3,12 +3,13 @@
     "rules": [
         {
             "domain": [
-                "0123456789nonexistent.com",
                 "1337.abcvg.info",
                 "bt.okmp3.ru",
                 "ipv4.rer.lol",
                 "ipv6.rer.lol",
                 "nyaa.tracker.wf",
+                "open.trackerlist.xyz",
+                "shubt.net",
                 "tk.greedland.net",
                 "torrent.hificode.in",
                 "torrentsmd.com",
@@ -17,7 +18,6 @@
                 "tracker.ipv6tracker.ru",
                 "tracker.mywaifu.best",
                 "tracker.netmap.top",
-                "tracker.opentrackr.org",
                 "tracker.privateseedbox.xyz",
                 "tracker.renfei.net",
                 "tracker.tritan.gg",
@@ -26,7 +26,6 @@
                 "1337.abcvg.info",
                 "t.213891.xyz",
                 "tr.abiir.top",
-                "tr.abir.ga",
                 "tr.nyacat.pw",
                 "tracker.aburaya.live",
                 "tracker.bjut.jp",
@@ -74,7 +73,6 @@
                 "tracker.skillindia.site",
                 "tracker.skyts.net",
                 "tracker.srv00.com",
-                "tracker.theoks.net",
                 "tracker.therarbg.to",
                 "tracker.torrent.eu.org",
                 "tracker.torrust-demo.com",
