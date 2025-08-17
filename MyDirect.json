@@ -11,8 +11,10 @@
       ],
       "domain": [
         "test.steampowered.com",
-        "api.steampowered.com"
+        "api.steampowered.com",
+        "dilinksuperappserver-cn.byd.auto"
       ]
     }
   ]
 }
+
