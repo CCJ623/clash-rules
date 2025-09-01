@@ -3,6 +3,7 @@
     "rules": [
         {
             "domain": [
+                "0123456789nonexistent.com",
                 "1337.abcvg.info",
                 "bt.okmp3.ru",
                 "ipv4.rer.lol",
@@ -25,7 +26,6 @@
                 "3.tracker.eu.org",
                 "4.tracker.eu.org",
                 "tr.abiir.top",
-                "tr.abir.ga",
                 "tr.nyacat.pw",
                 "tracker.alaskantf.com",
                 "tracker.expli.top",
@@ -41,6 +41,7 @@
                 "bt.bontal.net",
                 "d40969.acod.regrucolo.ru",
                 "evan.im",
+                "exodus.desync.com",
                 "extracker.dahrkael.net",
                 "martin-gebhardt.eu",
                 "open.demonii.com",
@@ -65,6 +66,7 @@
                 "tracker.ololosh.space",
                 "tracker.opentrackr.org",
                 "tracker.plx.im",
+                "tracker.qu.ax",
                 "tracker.rescuecrew7.com",
                 "tracker.skillindia.site",
                 "tracker.srv00.com",
