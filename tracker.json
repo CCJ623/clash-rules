@@ -3,7 +3,6 @@
     "rules": [
         {
             "domain": [
-                "0123456789nonexistent.com",
                 "1337.abcvg.info",
                 "bt.okmp3.ru",
                 "ipv4.rer.lol",
@@ -26,6 +25,7 @@
                 "2.tracker.eu.org",
                 "3.tracker.eu.org",
                 "4.tracker.eu.org",
+                "torrent.tracker.durukanbal.com",
                 "tr.abiir.top",
                 "tr.abir.ga",
                 "tr.nyacat.pw",
@@ -62,9 +62,10 @@
                 "tracker.ducks.party",
                 "tracker.fnix.net",
                 "tracker.gigantino.net",
+                "tracker.gmi.gd",
+                "tracker.healthcareindia.store",
+                "tracker.hifimarket.in",
                 "tracker.hifitechindia.com",
-                "tracker.kmzs123.cn",
-                "tracker.ololosh.space",
                 "tracker.opentrackr.org",
                 "tracker.plx.im",
                 "tracker.qu.ax",
@@ -80,7 +81,6 @@
                 "tracker.wepzone.net",
                 "tracker.zupix.online",
                 "tracker.zupix.online",
-                "tracker2.dler.org",
                 "ttk2.nbaonlineservice.com",
                 "udp.tracker.projectk.org",
                 "wepzone.net",
