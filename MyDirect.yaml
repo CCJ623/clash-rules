@@ -33,8 +33,8 @@ payload:
   - DOMAIN,alibaba.cdn.steampipe.steamcontent.com
   
   #DNS
-  - IP-CIDR,119.29.29.29/32
-  - IP-CIDR,120.53.53.53/32
-  - IP-CIDR,1.12.12.12/32
-  - IP-CIDR,223.5.5.5/32
-  - IP-CIDR,223.6.6.6/32
+  - IP-CIDR,119.29.29.29/32,no-resolve
+  - IP-CIDR,120.53.53.53/32,no-resolve
+  - IP-CIDR,1.12.12.12/32,no-resolve
+  - IP-CIDR,223.5.5.5/32,no-resolve
+  - IP-CIDR,223.6.6.6/32,no-resolve
