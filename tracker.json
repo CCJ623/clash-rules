@@ -5,6 +5,7 @@
             "domain": [
                 "1337.abcvg.info",
                 "bt1.archive.org",
+                "bt2.archive.org",
                 "ipv4announce.sktorrent.eu",
                 "nyaa.tracker.wf",
                 "torrentsmd.com",
@@ -22,6 +23,7 @@
                 "t.213891.xyz",
                 "torrents.tmtime.dev",
                 "tr.abiir.top",
+                "tr.abir.ga",
                 "tr.nyacat.pw",
                 "tr.zukizuki.org",
                 "tracker.7471.top",
@@ -51,6 +53,8 @@
                 "seedpeer.net",
                 "t.overflow.biz",
                 "torrentclub.online",
+                "torrentclub.online",
+                "torrents.tmtime.dev",
                 "tracker-udp.gbitt.info",
                 "tracker.004430.xyz",
                 "tracker.aruku.ovh",
@@ -73,7 +77,6 @@
                 "tracker.torrent.eu.org",
                 "tracker.trackarr.org",
                 "tracker.wildkat.net",
-                "tracker2.dler.org",
                 "yuptracker-eu.gaijinent.com",
                 "zer0day.ch",
                 "tracker.openwebtorrent.com"
