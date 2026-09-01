@@ -4,7 +4,6 @@
         {
             "domain": [
                 "1337.abcvg.info",
-                "bt.okmp3.ru",
                 "bt1.archive.org",
                 "bt2.archive.org",
                 "ipv4announce.sktorrent.eu",
@@ -19,7 +18,6 @@
                 "1337.abcvg.info",
                 "t.213891.xyz",
                 "tr.abiir.top",
-                "tr.abir.ga",
                 "tr.burnabyhighstar.com",
                 "tracker.7471.top",
                 "tracker.bug38.com",
@@ -60,6 +58,7 @@
                 "tracker.cn.nyaa.net",
                 "tracker.corpscorp.online",
                 "tracker.dler.com",
+                "tracker.dler.org",
                 "tracker.ducks.party",
                 "tracker.farted.net",
                 "tracker.gmi.gd",
