@@ -4,7 +4,6 @@
         {
             "domain": [
                 "1337.abcvg.info",
-                "bittorrent-tracker.e-n-c-r-y-p-t.net",
                 "bt1.archive.org",
                 "bt2.archive.org",
                 "ipv4announce.sktorrent.eu",
@@ -23,7 +22,6 @@
                 "1337.abcvg.info",
                 "t.213891.xyz",
                 "tr.abiir.top",
-                "tr.abir.ga",
                 "tr.burnabyhighstar.com",
                 "tracker.7471.top",
                 "tracker.foreverpirates.co",
@@ -74,6 +72,7 @@
                 "tracker.teambelgium.net",
                 "tracker.torrent.eu.org",
                 "tracker.torrents.observer",
+                "tracker.willy.pro",
                 "tracker.openwebtorrent.com"
             ]
         }
